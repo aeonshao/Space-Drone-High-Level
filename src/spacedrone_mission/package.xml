@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>spacedrone_mission</name>
+  <version>0.1.0</version>
+  <description>Autonomous search + tool retrieval mission for the space drone</description>
+  <maintainer email="shao.aa@northeastern.edu">aaron</maintainer>
+  <license>Apache-2.0</license>
+
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>std_srvs</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>spacedrone_interfaces</exec_depend>
+  <exec_depend>spacedrone_vision</exec_depend>
+  <exec_depend>tool_registry</exec_depend>
+  <exec_depend>ros_gz_bridge</exec_depend>
+  <!-- mavsdk is pip only: pip install "mavsdk<4" -->
+
+  <test_depend>python3-pytest</test_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

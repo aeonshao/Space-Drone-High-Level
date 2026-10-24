@@ -1,0 +1,11 @@
+# tag id <-> tool name mapping. ROS params cant do dicts so its two lists, same order
+# (also update sim/generate_tags.py if you change this)
+aruco_detector:
+  ros__parameters:
+    aruco_dict: "DICT_4X4_50"
+    marker_size: 0.5          # meters, black part only. real printed ones are 0.2
+    tool_ids:   [0, 3, 7, 12]
+    tool_names: ["wrench", "hammer", "drill", "toolbox"]
+    ignore_unknown_ids: true
+    process_every_n: 2        # 30fps is overkill, every other frame is fine
+    max_distance: 15.0

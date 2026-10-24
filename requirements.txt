@@ -1,0 +1,7 @@
+# pip stuff that isnt available through apt / rosdep
+# NOTE: mavsdk 4.x is a totally different API, everything here uses the old one
+mavsdk<4
+opencv-contrib-python>=4.6   # only if your opencv doesnt have cv2.aruco (apt python3-opencv does)
+numpy
+matplotlib                   # scripts/plot_mission.py
+# ultralytics                # only for the old yolo experiments, not needed

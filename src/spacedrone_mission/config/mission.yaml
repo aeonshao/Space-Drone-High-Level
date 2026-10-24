@@ -1,0 +1,32 @@
+mission_node:
+  ros__parameters:
+    system_address: "udpin://0.0.0.0:14540"
+    auto_start: true
+
+    # search box in PX4 local NED (meters from where the drone took off)
+    search_north_min: 0.0
+    search_north_max: 22.0
+    search_east_min: -9.0
+    search_east_max: 9.0
+    search_altitude: 6.0     # at 6m the gz camera sees ~14m wide, tags are ~45px. 10m was too small to detect reliably
+    lane_spacing: 6.0
+    search_speed: 2.0        # m/s. 5 was fine for flying but the tag positions got smeared
+
+    # after the search, go hover over these tools (tag ids). [-1] = none
+    visit_tools: [3, 7]
+    visit_all_found: false
+    visit_altitude: 3.0
+    visit_hover_time: 5.0
+
+    waypoint_tolerance: 0.4
+    settle_speed: 0.3        # m/s, "stopped" threshold before landing / hovering
+    min_battery: 0.25
+
+tool_registry:
+  ros__parameters:
+    camera_offset_frd: [0.0, 0.0, 0.0]
+    outlier_gate_m: 1.5
+    min_sightings_for_gate: 5
+    max_tilt_deg: 20.0
+    max_pose_age_s: 0.5
+    load_existing_map: false
